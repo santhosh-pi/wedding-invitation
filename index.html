@@ -1,1 +1,91 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Cinematic Wedding Invitation</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }\n        header { background: #f2f2f2; padding: 20px; text-align: center; }\n        .container { padding: 20px; max-width: 800px; margin: auto; }\n        .language-toggle { margin: 20px 0; }\n        @media (max-width: 600px) {\n            header { padding: 10px; }\n            .container { padding: 10px; }\n        }\n    </style>\n</head>\n<body>\n    <header>\n        <h1>Cinematic Wedding Invitation</h1>\n        <div class="language-toggle">\n            <button onclick="toggleLanguage('en')">English</button>\n            <button onclick="toggleLanguage('ta')">தமிழ்</button>\n        </div>\n    </header>\n    <div class="container">\n        <h2>Welcome to Our Wedding!</h2>\n        <p>We're excited to invite you to our special day. Join us for a celebration of love!</p>\n        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdoC5LAb9z_DOw5ehFc8aLipgN5U5dsDk5Q4g-8qWgQX3oQHg/formResponse" method="POST" target="_self">\n            <h3>RSVP</h3>\n            <label for="name">Name:</label><br>\n            <input type="text" id="name" name="entry.2005620554" required><br>\n            <label for="attending">Will you attend?</label><br>\n            <select id="attending" name="entry.839337160" required>\n                <option value="yes">Yes</option>\n                <option value="no">No</option>\n            </select><br><br>\n            <input type="submit" value="Submit">\n        </form>\n        <script>\n            function toggleLanguage(lang) {\n                if (lang === 'ta') {\n                    document.querySelector('h1').innerText = 'திருமண அழைப்பிதழ்';\n                    document.querySelector('h2').innerText = 'எங்கள் திருமணத்திற்கு வருக தயாராகுங்கள்!';\n                    document.querySelector('p').innerText = 'நேசிக்கிற காதலர்களின் நிகழ்ச்சிக்கு உங்களை வரவேற்கிறோம்!';\n                } else {\n                    document.querySelector('h1').innerText = 'Cinematic Wedding Invitation';\n                    document.querySelector('h2').innerText = 'Welcome to Our Wedding!';\n                    document.querySelector('p').innerText = 'We are excited to invite you to our special day. Join us for a celebration of love!';\n                }\n            }\n        <\/script>\n    </div>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Wedding Invitation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f2f2f2;
+            margin: 0;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .toggle { margin: 10px; }
+        .details {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .section {
+            margin: 10px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .rsvp {
+            margin-top: 20px;
+            text-align: center; 
+        }
+        @media (max-width: 600px) {
+            .details {
+                flex-direction: column;
+            }
+        }
+        .animation {
+            transition: all 0.3s ease;
+        }
+        .animation:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cinematic Wedding Invitation</h1>
+        <div class="toggle">
+            <button onclick="toggleLanguage('en')">English</button>
+            <button onclick="toggleLanguage('ta')">தமிழ்</button>
+        </div>
+    </div>
+    <div class="details">
+        <div class="section animation">
+            <h2>Wedding Details</h2>
+            <p>Join us for a beautiful celebration!</p>
+            <p>Date: 2026-03-27</p>
+            <p>Location: Venue Name, City</p>
+            <p><a href="https://www.google.com/maps?q=Venue+Location" target="_blank">View on Map</a></p>
+        </div>
+        <div class="section animation">
+            <h2>RSVP</h2>
+            <div class="rsvp">
+                <p>Please fill out our RSVP form:</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXXXXXXXXXXXXXXX/viewform" target="_blank">RSVP Form</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleLanguage(lang) {
+            if(lang === 'en') {
+                document.querySelector('h1').innerText = 'Cinematic Wedding Invitation';
+                // update other texts to English
+            } else {
+                document.querySelector('h1').innerText = 'சினிமா திருமண அழைப்பு';
+                // update other texts to Tamil
+            }
+        }
+    </script>
+</body>
+</html>
