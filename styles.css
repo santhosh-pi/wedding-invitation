@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #3a6073, #3a3d6a);
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  transition: background 0.5s;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 2s;
+}
+
+p {
+  font-size: 1.5rem;
+  animation: fadeIn 3s;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
