@@ -1,91 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinematic Wedding Invitation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background-color: #f2f2f2;
-            margin: 0;
-            color: #333;
-        }
-        .header {
-            text-align: center;
-            background: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            position: relative;
-        }
-        .header h1 {
-            margin: 0;
-        }
-        .toggle { margin: 10px; }
-        .details {
-            display: flex;
-            justify-content: space-around;
-            padding: 20px;
-        }
-        .section {
-            margin: 10px;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .rsvp {
-            margin-top: 20px;
-            text-align: center; 
-        }
-        @media (max-width: 600px) {
-            .details {
-                flex-direction: column;
-            }
-        }
-        .animation {
-            transition: all 0.3s ease;
-        }
-        .animation:hover {
-            transform: scale(1.05);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Wedding</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C5A47E;--bg:#F8F5F2}
+body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);overflow-x:hidden}
+h1,h2{font-family:'Playfair Display',serif}
+header{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;position:relative;background:url('https://images.unsplash.com/photo-1519741497674-611481863552') center/cover fixed}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.content{position:relative;z-index:2}
+.section{padding:70px 20px;text-align:center}
+.card{background:#fff;padding:25px;margin:10px auto;max-width:420px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.1)}
+.countdown{font-size:2rem;color:var(--gold)}
+button{background:var(--gold);color:#fff;border:none;padding:12px 25px;border-radius:25px;cursor:pointer}
+.lang-toggle{position:fixed;top:20px;right:20px;z-index:10}
+input,select{width:80%;padding:10px;margin:8px;border-radius:10px;border:1px solid #ccc}
+.fade{opacity:0;transform:translateY(30px);transition:1s}.fade.show{opacity:1;transform:translateY(0)}
+canvas{position:fixed;top:0;left:0;pointer-events:none}
+/* Splash */
+#splash{position:fixed;inset:0;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:9999;transition:opacity .8s}
+#splash.hidden{opacity:0;pointer-events:none}
+#splash h1{letter-spacing:2px}
+#enterBtn{margin-top:20px}
+@media(max-width:600px){h1{font-size:2rem}}
+</style>
 </head>
 <body>
-    <div class="header">
-        <h1>Cinematic Wedding Invitation</h1>
-        <div class="toggle">
-            <button onclick="toggleLanguage('en')">English</button>
-            <button onclick="toggleLanguage('ta')">தமிழ்</button>
-        </div>
-    </div>
-    <div class="details">
-        <div class="section animation">
-            <h2>Wedding Details</h2>
-            <p>Join us for a beautiful celebration!</p>
-            <p>Date: 2026-03-27</p>
-            <p>Location: Venue Name, City</p>
-            <p><a href="https://www.google.com/maps?q=Venue+Location" target="_blank">View on Map</a></p>
-        </div>
-        <div class="section animation">
-            <h2>RSVP</h2>
-            <div class="rsvp">
-                <p>Please fill out our RSVP form:</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXXXXXXXXXXXXXXX/viewform" target="_blank">RSVP Form</a>
-            </div>
-        </div>
-    </div>
-    <script>
-        function toggleLanguage(lang) {
-            if(lang === 'en') {
-                document.querySelector('h1').innerText = 'Cinematic Wedding Invitation';
-                // update other texts to English
-            } else {
-                document.querySelector('h1').innerText = 'சினிமா திருமண அழைப்பு';
-                // update other texts to Tamil
-            }
-        }
-    </script>
+
+<!-- Splash / Touch to Open -->
+<div id="splash">
+  <h1>✨ Tap to Enter ✨</h1>
+  <button id="enterBtn">Open Invitation</button>
+</div>
+
+<div class="lang-toggle"><button onclick="toggleLang()">🌍 EN | தமிழ்</button></div>
+<canvas id="petals"></canvas>
+
+<header>
+  <div class="overlay"></div>
+  <div class="content">
+    <h1 id="names"></h1>
+    <p id="tagline"></p>
+    <div class="countdown" id="countdown"></div>
+  </div>
+</header>
+
+<section class="section fade">
+  <h2 id="storyTitle"></h2>
+  <p id="storyText"></p>
+</section>
+
+<section class="section fade">
+  <h2 id="eventTitle"></h2>
+  <div class="card"><p id="eventText"></p></div>
+</section>
+
+<section class="section fade">
+  <h2 id="rsvpTitle"></h2>
+  <form id="rsvpForm">
+    <input name="name" id="nameInput" required>
+    <input name="phone" id="phoneInput" required>
+    <select name="attending" id="attendSelect"></select>
+    <button type="submit" id="submitBtn"></button>
+  </form>
+  <p id="msg"></p>
+</section>
+
+<audio id="bgm" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3">
+</audio>
+
+<script>
+let config = {};
+let lang = 'en';
+
+// Load external config
+async function loadConfig(){
+  const res = await fetch('config.json');
+  config = await res.json();
+  render();
+  initCountdown();
+}
+
+function render(){
+  names.innerText = config.couple[lang];
+  tagline.innerText = config.tagline[lang];
+  storyTitle.innerText = config.story.title[lang];
+  storyText.innerText = config.story.text[lang];
+  eventTitle.innerText = config.event.title[lang];
+  eventText.innerText = config.event.text[lang];
+  rsvpTitle.innerText = config.rsvp.title[lang];
+  nameInput.placeholder = config.rsvp.name[lang];
+  phoneInput.placeholder = config.rsvp.phone[lang];
+  submitBtn.innerText = config.rsvp.submit[lang];
+  attendSelect.innerHTML = `<option>${config.rsvp.yes[lang]}</option><option>${config.rsvp.no[lang]}</option>`;
+}
+
+function toggleLang(){ lang = lang==='en'?'ta':'en'; render(); }
+
+function initCountdown(){
+  const target = new Date(config.countdownDate);
+  setInterval(()=>{
+    const now=new Date();
+    const d=target-now;
+    const days=Math.floor(d/86400000);
+    const hrs=Math.floor(d%86400000/3600000);
+    const mins=Math.floor(d%3600000/60000);
+    countdown.innerText=`${days}d ${hrs}h ${mins}m`;
+  },1000);
+}
+
+// RSVP submit
+document.getElementById('rsvpForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  fetch(config.scriptURL,{method:'POST',body:new FormData(e.target)})
+  .then(()=> msg.innerText=config.rsvp.success[lang])
+  .catch(()=> msg.innerText='Error');
+});
+
+// Scroll animation
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
+});
+document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+
+// Petals
+const canvas=document.getElementById('petals');
+const ctx=canvas.getContext('2d');
+canvas.width=innerWidth;canvas.height=innerHeight;
+let petals=[...Array(30)].map(()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:3+Math.random()*3,s:1+Math.random()*2}));
+(function draw(){
+ ctx.clearRect(0,0,canvas.width,canvas.height);
+ petals.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(197,164,126,0.6)';ctx.fill();p.y+=p.s;if(p.y>canvas.height)p.y=0});
+ requestAnimationFrame(draw);
+})();
+
+// Splash / user interaction to start music
+enterBtn.addEventListener('click',()=>{
+  splash.classList.add('hidden');
+  document.getElementById('bgm').play();
+});
+
+loadConfig();
+</script>
+
 </body>
 </html>

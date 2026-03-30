@@ -1,1 +1,9 @@
-{\n  "coupleNames": "John Doe & Jane Smith",\n  "date": "2026-03-27",\n  "venue": "Central Park, NY",\n  "mapLink": "https://goo.gl/maps/xyz123",\n  "googleFormLink": "https://forms.gle/xyz123",\n  "colorScheme": {\n    "primary": "#ff5733",\n    "secondary": "#33c1ff"\n  }\n}
+{
+  "couple":{"en":"Ananya ❤️ Rahul","ta":"அனன்யா ❤️ ராகுல்"},
+  "tagline":{"en":"Two Souls, One Journey","ta":"இரண்டு இதயங்கள், ஒரு பயணம்"},
+  "story":{"title":{"en":"Our Story","ta":"எங்கள் கதை"},"text":{"en":"Every love story is beautiful, but ours is our favorite.","ta":"எங்கள் காதல் கதை மிகவும் சிறப்பு"}},
+  "event":{"title":{"en":"Event","ta":"நிகழ்வு"},"text":{"en":"12 June 2026 | 6:00 AM","ta":"12 ஜூன் 2026 | காலை 6:00"}},
+  "rsvp":{"title":{"en":"RSVP","ta":"வருகை உறுதி"},"name":{"en":"Name","ta":"பெயர்"},"phone":{"en":"Phone","ta":"தொலைபேசி"},"yes":{"en":"Yes","ta":"ஆம்"},"no":{"en":"No","ta":"இல்லை"},"submit":{"en":"Submit","ta":"அனுப்பு"},"success":{"en":"Submitted ❤️","ta":"வெற்றிகரமாக அனுப்பப்பட்டது ❤️"}},
+  "countdownDate":"June 12, 2026 06:00:00",
+  "scriptURL":"YOUR_GOOGLE_SCRIPT_URL"
+}
