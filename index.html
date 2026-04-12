@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Wedding</title>
+<title>Wedding Invitation</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 :root{--gold:#C5A47E;--bg:#F8F5F2}
@@ -66,9 +66,9 @@ canvas{position:fixed;top:0;left:0;pointer-events:none}
 </section>
 
 <section class="section fade">
-  <h3 id="eventTitle"></h3>
-  <div class="card"><p id="receptionText"></p></div>
   <h3 id="receptionTitle"></h3>
+  <div class="card"><p id="receptionText"></p></div>
+  <h3 id="eventTitle"></h3>
   <div class="card"><p id="eventText"></p></div>
   <button onclick="openMap()">📍 Open Location</button>
   <button onclick="addToCalendar()">🔔 Add to Calendar</button>
@@ -82,7 +82,7 @@ canvas{position:fixed;top:0;left:0;pointer-events:none}
   <form id="rsvpForm">
     <input name="name" id="nameInput" required>
     <input name="phone" id="phoneInput" required>
-    <select name="attending" id="attendSelect"></select>
+    <select name="attending" id="attendSelect"></select><br>
     <button type="submit" id="submitBtn"></button>
   </form>
   <p id="msg"></p>
@@ -200,7 +200,7 @@ function renderGallery(){
 function sendWhatsApp(){
  const name=prompt("Enter guest name");
  const url=window.location.origin+"?name="+encodeURIComponent(name);
- const text=`Hey ${name}, you're invited for our wedding happening on ${config.event.text[lang]} ❤️\n${url}`;
+ const text=`Hey ${name}, you're invited for our wedding happening on ${config.event.text[lang]} \n${url}`;
  window.open(`https://wa.me/?text=${encodeURIComponent(text)}`);
 }
 
