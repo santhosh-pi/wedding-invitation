@@ -2,10 +2,10 @@
   "couple":{"en":"Santhosh ❤️ Pooja","ta":"சந்தோஷ் ❤️ பூஜா"},
   "tagline":{"en":"Two Souls, One Journey","ta":"இரண்டு இதயங்கள், ஒரு பயணம்"},
   "story":{"title":{"en":"Our Story","ta":"எங்கள் கதை"},"text":{"en":"Every love story is beautiful, but ours is our favorite.","ta":"எங்கள் காதல் கதை மிகவும் சிறப்பு"}},
-  "event":{"title":{"en":"Wedding","ta":"நிகழ்வு"},"text":{"en":"17 June 2026 | 7:30 AM","ta":"17 ஜூன் 2026 | காலை 7:30"}},
+  "event":{"title":{"en":"Wedding","ta":"நிகழ்வு"},"text":{"en":"17 June 2026 | 6:00 AM - 7:30","ta":"17 ஜூன் 2026 | காலை 6:00 - 7:30"}},
   "reception":{"title":{"en":"Reception","ta":"நிகழ்வு"},"text":{"en":"16 June 2026 | 6:00 PM","ta":"16 ஜூன் 2026 | மாலை 6:00"}},
   "rsvp":{"title":{"en":"RSVP","ta":"வருகை உறுதி"},"name":{"en":"Name","ta":"பெயர்"},"phone":{"en":"Phone","ta":"தொலைபேசி"},"yes":{"en":"Yes","ta":"ஆம்"},"no":{"en":"No","ta":"இல்லை"},"submit":{"en":"Submit","ta":"அனுப்பு"},"success":{"en":"Submitted ❤️","ta":"வெற்றிகரமாக அனுப்பப்பட்டது ❤️"}},
   "countdownDate":"June 17, 2026 07:30:00",
   "scriptURL":"YOUR_GOOGLE_SCRIPT_URL",
-  "googleMap":"https://www.google.com/maps/place/vjr mahal/data=!4m2!3m1!1s0x3bad35532ee9e8ff:0x67ad0f53a3ff5f8?sa=X"
+  "googleMap":"https://www.google.com/maps/place/VJR+Mahal+and+Vinayagam+Residency/@12.909746,79.3233762,490m/data=!3m1!1e3!4m9!3m8!1s0x3bad35532ee9e8ff:0x67ad0f53a3ff5f8!5m2!4m1!1i2!8m2!3d12.9107757!4d79.3245325!16s%2Fg%2F11fhr6njtp?entry=ttu&g_ep=EgoyMDI1MDEyMS4wIKXMDSoASAFQAw%3D%3D"
 }
