@@ -159,7 +159,7 @@ function openMap(){
 // 🔔 Calendar
 function addToCalendar(){
  const url=`https://www.google.com/calendar/render?action=TEMPLATE&text=Wedding&dates=20260617T073000/20260617T090000&details=Join us&location=${config.googleMap}`;
- window.open(url);
+ window.open(url, '_blank');
 }
 
 // 🧾 Luxury PDF
@@ -201,7 +201,7 @@ function sendWhatsApp(){
  const name=prompt("Enter guest name");
  const url=window.location.origin+"/wedding-invitation/?name="+encodeURIComponent(name);
  const text=`Hey ${name}, you're invited for our wedding happening on ${config.event.text[lang]} \n${url}`;
- window.open(`https://wa.me/?text=${encodeURIComponent(text)}`);
+ window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
 }
 
 // RSVP
