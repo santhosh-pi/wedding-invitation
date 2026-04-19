@@ -33,7 +33,7 @@ input,select{width:80%;padding:10px;margin:8px;border-radius:10px;border:1px sol
 canvas{position:fixed;top:0;left:0;pointer-events:none}
 .gallery{display:flex;overflow-x:auto;scroll-snap-type:x mandatory}
 .gallery img{width:40%;margin:10px;border-radius:15px;scroll-snap-align:center}
-#whatsappBtn{position:fixed;bottom:20px;right:20px;background:#25D366}
+#whatsappBtn{position:fixed;bottom:20px;right:20px;background:#25D366;display: none;}
 #guestWelcome{font-size:1.2rem;margin-top:10px;color:#fff}
 </style>
 </head>
@@ -142,6 +142,9 @@ function personalize(){
    const formatted=name.charAt(0).toUpperCase()+name.slice(1);
    //guestWelcome.innerText = `Hi, ${formatted} ❤️`;
    guestName.innerText = `Hi, ${formatted} ❤️`;
+  if(name == 'Sandy'){
+    document.getElementById("whatsappBtn").style.display = "inline";
+  }
  }
 }
 
@@ -153,7 +156,7 @@ openBtn.onclick=()=>{
 
 // 📍 Google Maps
 function openMap(){
- window.open(config.googleMap);
+ window.open(config.googleMap, '_blank');
 }
 
 // 🔔 Calendar
